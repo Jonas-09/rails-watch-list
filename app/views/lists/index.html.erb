@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>All lists</h1>
+  <%= link_to "Create new list", new_list_path%>
+  <hr>
+  <h2>See all <%=@lists.count%> lists below:</h2>
+  <% @lists.each do |list| %>
+  <div class="card-category">
+    <%= link_to list.name, list_path(list)%>
+    </div>
+  <% end %>
+</div>

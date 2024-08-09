@@ -1,0 +1,19 @@
+<div class="container">
+  <h1><%= @list.name %></h1>
+  <%# <%= link_to "Add bookmark / movie to list", new_list_bookmark_path %>
+  <hr>
+  <%= link_to 'Back to Lists', lists_path %>
+  <div>
+    <% @bookmarks.each do |bookmark| %>
+    <%= bookmark.movie.title %>
+    <%= bookmark.comment %>
+    <%= link_to bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: "Delete #{bookmark.movie.title} from list?" } do %>
+          <i class="fa-solid fa-trash-can" style="color: #B197FC;"></i>
+          <% end  %>
+    <% end  %>
+  </div>
+  <div>
+  <h3>Add new movies to this list</h3>
+  <%= render "bookmarks/new" %>
+  </div>
+</div>
