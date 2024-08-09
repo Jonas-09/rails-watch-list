@@ -2,11 +2,13 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 50%; /* 50% of the container width */
+  max-width: 300px;
 }
 
 .card-movie > img {
-  height: 100px;
-  width: 50%;
+  height: 300px;
+  width: 100%;
   object-fit: cover;
 }
 
@@ -36,4 +38,16 @@
   right: 16px;
   top: -20px;
   width: 40px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.grid-item {
+  background-color: #ccc;
+  padding: 20px;
+  text-align: center;
 }

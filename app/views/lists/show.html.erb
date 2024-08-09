@@ -3,9 +3,9 @@
   <%# <%= link_to "Add bookmark / movie to list", new_list_bookmark_path %>
   <hr>
   <%= link_to 'Back to Lists', lists_path %>
-  <div>
+  <div class="grid-container">
    <% @bookmarks.each do |bookmark| %>
-  <div class="card-movie">
+  <div class="card-movie grid-item">
     <img src="<%= bookmark.movie.poster_url %>" />
     <div class="card-movie-infos">
       <div>
