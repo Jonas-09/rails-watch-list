@@ -3,27 +3,28 @@
   <%# <%= link_to "Add bookmark / movie to list", new_list_bookmark_path %>
   <hr>
   <%= link_to 'Back to Lists', lists_path %>
+
   <div class="grid-container pb-4 pt-4">
-   <% @bookmarks.each do |bookmark| %>
-  <div class="card-movie grid-item">
-    <img src="<%= bookmark.movie.poster_url %>" />
-    <div class="card-movie-infos">
-      <div>
-        <h2><%= bookmark.movie.title %></h2>
-        <p><%= bookmark.comment %></p>
+    <% @bookmarks.each do |bookmark| %>
+      <div class="card-movie grid-item">
+        <img src="<%= bookmark.movie.poster_url %>" />
+        <div class="card-movie-infos">
+          <div>
+            <h2><%= bookmark.movie.title %></h2>
+            <p><%= bookmark.comment %></p>
+          </div>
+          <%= link_to bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: "Delete #{bookmark.movie.title} from list?" } do %>
+            <i class="fa-solid fa-trash-can" style="color: #B197FC;"></i>
+          <% end %>
+        </div>
       </div>
-      <%= link_to bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: "Delete #{bookmark.movie.title} from list?" } do %>
-        <i class="fa-solid fa-trash-can" style="color: #B197FC;"></i>
-      <% end %>
-    </div>
+    <% end %>
   </div>
-<% end %>
-    </div>
-  </div>
-  </div>
-  <hr>
-  <div class="container pt-5">
+</div>
+
+<hr>
+
+<div class="container pt-5">
   <h3>Add new movies to this list</h3>
   <%= render "bookmarks/new" %>
-  </div>
 </div>

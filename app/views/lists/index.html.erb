@@ -1,7 +1,14 @@
-<div class="container">
-  <br>
-  <h1>Official best Movie List</h1>
-  <%= link_to "Create new list", new_list_path%>
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHlhbGp4YmZkcm4wdWRsNjZkcGJ5NmN2aXR0eDZlNm9iYWxjMm10eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SVCSsoKU5v6ZJLk07n/giphy.webp);">
+  <div class="container">
+    <h1>Maja's Favorite Movies</h1>
+    <p>Official best Movie List</p>
+    <%= link_to "Create new list", new_list_path, class: "btn btn-primary" %>
+    <%# <a  href="#">Apply now</a> %>
+  </div>
+</div>
+
+</div>
   <hr>
   <h2>See all <%=@lists.count%> lists below:</h2>
   <% @lists.each do |list| %>

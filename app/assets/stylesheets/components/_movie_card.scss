@@ -51,3 +51,31 @@
   padding: 20px;
   text-align: center;
 }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card-movie {
+    width: 100%; /* Full width within the grid */
+    max-width: none; /* Override the max-width */
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  .card-movie {
+    width: 100%;
+    max-width: none;
+  }
+}
